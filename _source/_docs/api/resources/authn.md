@@ -2659,6 +2659,13 @@ curl -v -X POST \
 
 Enrolls a user with a U2F factor.  The enrollment process starts with getting an `appId` and `nonce` from Okta and using those to get registration information from the U2F key using the U2F javascript API.
 
+Note: 
+
+* Due to [FIDO U2F spec restriction](https://fidoalliance.org/specs/fido-u2f-v1.2-ps-20170411/fido-appid-and-facets-v1.2-ps-20170411.html#appid-example-1), we don't support enroll and verify U2F factor from multiple origins that don't share
+a common root domain. For example, if a user enrolled in U2F factor via Okta Sign-in widget that is hosted at
+`https://login.company.com`, while the user can verify the U2F factor from `https://login.company.com`, the user would not
+be able to verify it from okta portal `https://company.okta.com`.
+
 ##### Enroll U2F Request Example
 {:.api .api-request .api-request-example}
 
