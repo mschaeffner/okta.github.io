@@ -468,7 +468,7 @@ Adds an app target for an `APP_ADMIN` role assignment.
 
 Adding the first app target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
-Adding an app target will override any existing instance targets of the app. For example, if someone was assigned to administer a specific `Facebook` instance, calling this endpoint with `facebook` for `appName`, would make them administrator for all `Facebook` instances.
+Adding an app target will override any existing instance targets of the app. For example, if someone was assigned to administer a specific FACEBOOK instance, calling this endpoint with `facebook` for `appName`, would make them administrator for all FACEBOOK instances.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -514,7 +514,7 @@ Adds an app instance target for an `APP_ADMIN` role assignment
 
 Adding the first app or (app instance) target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
-Adding an app instance target will override any existing target of the app. For example, if someone was assigned to administer `Facebook` apps, calling this endpoint with a `Facebook` instance id for `appInstanceId`, would make them administrator for the instance only.
+Adding an app instance target will override any existing target of the app. For example, if someone was assigned to administer Facebook apps, calling this endpoint with a Facebook app instance id for `appInstanceId`, would make them administrator for the instance only.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -558,7 +558,7 @@ HTTP/1.1 204 No Content
 
 Removes an app target from an `APP_ADMIN` role assignment
 
-Don't remove the last app target from a role assignment, as this causes an exception.  If you need a role assignment that applies to all apps, the API consumer should delete the `APP_ADMIN` role assignment and recreate it.
+> Note: Don't remove the last app target from a role assignment, as this causes an exception.  If you need a role assignment that applies to all apps, the API consumer should delete the `APP_ADMIN` role assignment and recreate it.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -601,7 +601,7 @@ HTTP/1.1 204 No Content
 
 Removes an app target from an `APP_ADMIN` role assignment.
 
-Don't remove the last app target from a role assignment, as this causes an exception.  If you need a role assignment that applies to all apps, the API consumer should delete the `APP_ADMIN` role assignment and recreate it.
+> Note: Don't remove the last app target from a role assignment, as this causes an exception.  If you need a role assignment that applies to all apps, the API consumer should delete the `APP_ADMIN` role assignment and recreate it.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
