@@ -361,9 +361,10 @@ curl -v -X GET \
 ##### Response Example
 {:.api .api-response .api-response-example}
 
+The example shows two applications and two instances. Note the response for instances has an `id` field.
+
 ~~~json
 [
-  // An Application
   {
     "name": "salesforce",
     "displayName": "Salesforce.com",
@@ -400,7 +401,6 @@ curl -v -X GET \
       }
     }
   },
-  // Another Application
   {
     "name": "boxnet",
     "displayName": "Box",
@@ -435,23 +435,23 @@ curl -v -X GET \
       }
     }
   },
-  // An Application Instance
   {
     "name": "Facebook for Detroit Office",
     "status": "ACTIVE",
+    "id": "0oapsqQ5dv19pqyEo0g3",
     "_links": {
       "self": {
           "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/0oarn57pSomtd44qX0g3"
       }
     }
   },
-  // Another Application Instance
   {
     "name": "Facebook (Toronto)",
     "status": "ACTIVE",
+    "id": "0obdfgrQ5dv29pqyQo0f5",
     "_links": {
        "self": {
-           "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/0oarr0rkX6Pq44Nf30g3"
+           "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/0obdfgrQ5dv29pqyQo0f5"
        }
     }
   }
@@ -468,7 +468,7 @@ Adds an app target for an `APP_ADMIN` role assignment.
 
 Adding the first app target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
-Adding an app target will override any existing instance targets of the app. For example, if someone was assigned to administer a specific facebook instance, calling this endpoint with facebook, would make them administrator for all facebook instances.
+Adding an app target will override any existing instance targets of the app. For example, if someone was assigned to administer a specific `Facebook` instance, calling this endpoint with `facebook` for `appName`, would make them administrator for all `Facebook` instances.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -510,11 +510,11 @@ HTTP/1.1 204 No Content
 
 {% api_operation put /api/v1/users/${userId}/roles/${roleId}/targets/catalog/apps/${appName}/${appInstanceId} %}
 
-Adds an app instance target for an `APP_ADMIN` role assignment.
+Adds an app instance target for an `APP_ADMIN` role assignment
 
 Adding the first app or (app instance) target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
-Adding an app instance target will override any existing target of the app. For example, if someone was assigned to administer facebook apps, calling this endpoint with a facebook instance, would make them administrator for the instance only.
+Adding an app instance target will override any existing target of the app. For example, if someone was assigned to administer `Facebook` apps, calling this endpoint with a `Facebook` instance id for `appInstanceId`, would make them administrator for the instance only.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -556,7 +556,7 @@ HTTP/1.1 204 No Content
 
 {% api_operation delete /api/v1/users/${userId}/roles/${roleId}/targets/catalog/apps/${appName} %}
 
-Removes an app target from an `APP_ADMIN` role assignment.
+Removes an app target from an `APP_ADMIN` role assignment
 
 Don't remove the last app target from a role assignment, as this causes an exception.  If you need a role assignment that applies to all apps, the API consumer should delete the `APP_ADMIN` role assignment and recreate it.
 
