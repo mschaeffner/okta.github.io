@@ -468,7 +468,7 @@ Adds an app target for an `APP_ADMIN` role assignment.
 
 Adding the first app target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
-Adding an app target will override any existing instance targets of the app. For example, if someone was assigned to administer a specific FACEBOOK instance, calling this endpoint with `facebook` for `appName`, would make them administrator for all FACEBOOK instances.
+Adding an app target will override any existing instance targets of the app. For example, if someone was assigned to administer a specific Facebook instance, calling this endpoint with `facebook` for `appName`, would make them administrator for all Facebook instances.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
