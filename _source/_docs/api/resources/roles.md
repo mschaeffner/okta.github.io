@@ -397,7 +397,7 @@ The example shows two applications and two instances. Note the response for inst
         }
       ],
       "self": {
-          "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/salesforce"
+          "href": "http://{yourOktaDomain}.com/api/v1/catalog/apps/salesforce"
       }
     }
   },
@@ -431,7 +431,7 @@ The example shows two applications and two instances. Note the response for inst
         }
       ],
       "self": {
-          "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/boxnet"
+          "href": "http://{yourOktaDomain}.com/api/v1/catalog/apps/boxnet"
       }
     }
   },
@@ -441,7 +441,7 @@ The example shows two applications and two instances. Note the response for inst
     "id": "0oapsqQ5dv19pqyEo0g3",
     "_links": {
       "self": {
-          "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/0oarn57pSomtd44qX0g3"
+          "href": "http://{yourOktaDomain}.com/api/v1/apps/0oapsqQ5dv19pqyEo0g3"
       }
     }
   },
@@ -451,7 +451,7 @@ The example shows two applications and two instances. Note the response for inst
     "id": "0obdfgrQ5dv29pqyQo0f5",
     "_links": {
        "self": {
-           "href": "http://{yourOktaDomain}.com/api/v1/meta/schemas/apps/0obdfgrQ5dv29pqyQo0f5"
+           "href": "http://{yourOktaDomain}.com/api/v1/apps/0obdfgrQ5dv29pqyQo0f5"
        }
     }
   }
@@ -515,6 +515,7 @@ Adds an app instance target for an `APP_ADMIN` role assignment
 Adding the first app or (app instance) target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
 Adding an app instance target will override any existing target of the app. For example, if someone was assigned to administer Facebook apps, calling this endpoint with a Facebook app instance id for `appInstanceId`, would make them administrator for the instance only.
+It is allowed to authorize an administrator with more than one instances of the same app by calling this API multiple times. In other words, one can be an administrator of several instances of the same or different apps but they cannot be an administrator of an app and its instances at the same time.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
