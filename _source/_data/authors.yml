@@ -166,7 +166,7 @@ jmelberg:
   avatar: avatar-jmelberg.jpg
   email: jordan.melberg@okta.com
   github: https://github.com/jmelberg
-  
+
 bparise:
   full_name: Brandon Parise
   display_name: Brandon Parise
@@ -183,3 +183,10 @@ aaronpk:
   web: https://aaronparecki.com/
   twitter: https://twitter.com/aaronpk
   github: https://github.com/aaronpk
+
+alexdahl:
+  full_name: Alex Dahl
+  display_name: Alex Dahl
+  avatar: avatar-alexdahl.jpg
+  github: https://github.com/alexdahl
+  web: https://alexdahl.com/
