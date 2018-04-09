@@ -397,7 +397,7 @@ The example shows two applications and two instances. Note the response for inst
         }
       ],
       "self": {
-          "href": "http://{yourOktaDomain}.com/api/v1/catalog/apps/salesforce"
+          "href": "https://{yourOktaDomain}.com/api/v1/catalog/apps/salesforce"
       }
     }
   },
@@ -431,7 +431,7 @@ The example shows two applications and two instances. Note the response for inst
         }
       ],
       "self": {
-          "href": "http://{yourOktaDomain}.com/api/v1/catalog/apps/boxnet"
+          "href": "https://{yourOktaDomain}.com/api/v1/catalog/apps/boxnet"
       }
     }
   },
@@ -441,7 +441,7 @@ The example shows two applications and two instances. Note the response for inst
     "id": "0oapsqQ5dv19pqyEo0g3",
     "_links": {
       "self": {
-          "href": "http://{yourOktaDomain}.com/api/v1/apps/0oapsqQ5dv19pqyEo0g3"
+          "href": "http:s//{yourOktaDomain}.com/api/v1/apps/0oapsqQ5dv19pqyEo0g3"
       }
     }
   },
@@ -451,7 +451,7 @@ The example shows two applications and two instances. Note the response for inst
     "id": "0obdfgrQ5dv29pqyQo0f5",
     "_links": {
        "self": {
-           "href": "http://{yourOktaDomain}.com/api/v1/apps/0obdfgrQ5dv29pqyQo0f5"
+           "href": "https://{yourOktaDomain}.com/api/v1/apps/0obdfgrQ5dv29pqyQo0f5"
        }
     }
   }
@@ -514,8 +514,7 @@ Adds an app instance target for an `APP_ADMIN` role assignment
 
 Adding the first app or (app instance) target changes the scope of the role assignment from applying to all app targets to applying to the specified target.
 
-Adding an app instance target will override any existing target of the app. For example, if someone was assigned to administer Facebook apps, calling this endpoint with a Facebook app instance id for `appInstanceId`, would make them administrator for the instance only.
-It is allowed to authorize an administrator with more than one instances of the same app by calling this API multiple times. In other words, one can be an administrator of several instances of the same or different apps but they cannot be an administrator of an app and its instances at the same time.
+App Targets and App Instance Targets cannot be mixed for the same app name. For example, you cannot specify that an administrator has access to mange Salesforce (the entire app type) and specific instances of the Salesforce app; it must be one or the other.
 
 ##### Request Parameters
 {:.api .api-request .api-request-params}
@@ -600,7 +599,7 @@ HTTP/1.1 204 No Content
 
 {% api_operation delete /api/v1/users/${userId}/roles/${roleId}/targets/catalog/apps/${appName}/${appInstanceId} %}
 
-Removes an app target from an `APP_ADMIN` role assignment.
+Removes an app instance target from an `APP_ADMIN` role assignment.
 
 > Note: Don't remove the last app target from a role assignment, as this causes an exception.  If you need a role assignment that applies to all apps, the API consumer should delete the `APP_ADMIN` role assignment and recreate it.
 
