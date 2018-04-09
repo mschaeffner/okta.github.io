@@ -37,16 +37,16 @@ To use the CDN, include this in your HTML:
 ~~~html
 <!-- Latest CDN production Javascript and CSS: {{ site.versions.okta_signin_widget }} -->
 <script
-  src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/js/okta-sign-in.min.js"
+  src="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/{{ site.versions.okta_signin_widget }}/js/okta-sign-in.min.js"
   type="text/javascript"></script>
 <link
-  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/css/okta-sign-in.min.css"
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/{{ site.versions.okta_signin_widget }}/css/okta-sign-in.min.css"
   type="text/css"
   rel="stylesheet"/>
 
 <!-- Theme file: Customize or replace this file if you want to override our default styles -->
 <link
-  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/2.6.0/css/okta-theme.css"
+  href="https://ok1static.oktacdn.com/assets/js/sdk/okta-signin-widget/{{ site.versions.okta_signin_widget }}/css/okta-theme.css"
   type="text/css"
   rel="stylesheet"/>
 ~~~
@@ -125,7 +125,7 @@ If you'd like to sign the user directly into an application within Okta, you jus
 
 It is also possible to use the Widget to retrieve an ID token for your user, and to then use that ID token to sign into a custom portal that you have created.
 
-In this scenario, you are using your Okta org's authorization server to mint the ID token. You will need to have an OIDC application configured in your Okta org.
+In this scenario, you are using your Okta org's authorization server to mint the ID token. You will need to have an [OpenID Connect application configured in your Okta org](https://support.okta.com/help/Documentation/Knowledge_Article/Using-the-App-Integration-Wizard-1111708899#OIDCWizard).
 
 ~~~javascript
 var signIn = new OktaSignIn({
@@ -157,7 +157,7 @@ else {
 
 Your application will then need to parse the ID token that is passed by Okta.
 
-#### ID Token for Your Application
+#### Sign In to Your Custom Application
 
 If you'd like to use the Widget to log users into your own application instead of Okta, you will have to set-up a custom Authorization Server in Okta.
 
